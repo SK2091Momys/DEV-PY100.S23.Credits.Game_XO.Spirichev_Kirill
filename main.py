@@ -7,7 +7,6 @@ def game():
     WIN_1 = 0
     WIN_2 = 0
 
-
     def made_field(n):
         """
         Функция создающая игровое поле заданного размерами N на N
@@ -16,7 +15,6 @@ def game():
         elem = [["*" for _ in range(1, n + 1)] for _ in range(1, n + 1)]
         return elem
 
-
     def draw_field(field):
         """
         Функция позволяющая вывести игровое поле в виде матрицы
@@ -24,7 +22,6 @@ def game():
         """
         for _ in field:
             print(f"{_}")
-
 
     def motion_p1(field):
         """
@@ -47,7 +44,6 @@ def game():
                 print(f"Такой ячейки не существует! Вводите номера от 0 до {N - 1}!")
         return field
 
-
     def test_win_p1(test_field, n):
         """
         Функция проверки уловия победы первого игрока
@@ -58,7 +54,7 @@ def game():
         win = 6
         a = [row[idx] for idx, row in enumerate(test_field)]
         # Cписок составленный из элементов диагонали "\" игрового поля
-        b = [row[(n-1) - idx] for idx, row in enumerate(test_field)]
+        b = [row[(n - 1) - idx] for idx, row in enumerate(test_field)]
         # Cписок составленный из элементов диагонали "/" игрового поля
         c = []
         # Проверка победы по горизанталям и диагоналям:
@@ -82,7 +78,6 @@ def game():
                 break
         return win
 
-
     def motion_p2(field):
         """
         Функция хода произведенного вторым игроком.
@@ -104,7 +99,6 @@ def game():
                 print(f"Такой ячейки не существует! Вводите номера от 0 до {N - 1}!")
         return field
 
-
     def test_win_p2(test_field, n):
         """
         Функция проверки уловия победы первого игрока
@@ -116,7 +110,7 @@ def game():
         # Cписок составленный из элементов диагонали "\" игрового поля:
         a = [row[idx] for idx, row in enumerate(test_field)]
         # Cписок составленный из элементов диагонали "/" игрового поля:
-        b = [row[(n-1) - idx] for idx, row in enumerate(test_field)]
+        b = [row[(n - 1) - idx] for idx, row in enumerate(test_field)]
         # Cписок составленный из элементов вертикали игрового поля:
         c = []
         # Проверка победы по горизанталям и диагоналям:
@@ -139,7 +133,6 @@ def game():
                 win = 1
                 break
         return win
-
 
     # Выбор игрока для первого хода:
     while True:
@@ -186,4 +179,6 @@ def game():
         game()
     else:
         print("Игра закончена.\nДо новых встреч!!!")
+
+
 game()
