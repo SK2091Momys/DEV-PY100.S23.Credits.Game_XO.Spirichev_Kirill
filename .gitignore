@@ -9,3 +9,9 @@ __init__.py
 *.png
 
 output.txt
+
+build
+
+dist
+
+*.spec
